@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="app.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="citate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="slide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="calculatorscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="introducere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="leaderboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="meniu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="meniu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="pagina_start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="avantaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="slide2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="survey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
