@@ -4,9 +4,6 @@
     <Compile Update="app.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="citate.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="slide.cs">
       <SubType>Form</SubType>
     </Compile>
