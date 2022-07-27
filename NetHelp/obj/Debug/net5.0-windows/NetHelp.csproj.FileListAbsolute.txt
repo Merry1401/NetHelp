@@ -38,4 +38,3 @@ C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.leaderboa
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.slide.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.slide2.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.survey.resources
-C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.citate.resources

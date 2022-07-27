@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace NetHelp
 {
     public partial class meniu : Form
     {
+        int nr = 0;
+        Graphics g;
+        string s1 = "NetHelp";
+        string s2 = "Digital Wellbeing";
+        string s3 = "Avantajele si dezavantajele tehnologiei intr-o lume moderna";
+       
         public meniu()
         {
             InitializeComponent();
@@ -85,9 +92,51 @@ namespace NetHelp
             button4.BackColor = Color.SteelBlue;
         }
 
+        private void meniu_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
+            g = this.CreateGraphics();
 
+            nr++;
+            if (nr % 4 == 1)
+            {
+                Font drawFont = new Font("Arial", 18);
+                SolidBrush drawBrush = new SolidBrush(Color.Black);
+
+                float x = 160.0F;
+                float y = 200.0F;
+
+                g.DrawString(s1, drawFont, drawBrush, x, y);
+            }
+            else if (nr % 4 == 2)
+            {
+
+                Font drawFont = new Font("Arial", 18, FontStyle.Underline);
+                SolidBrush drawBrush = new SolidBrush(Color.SteelBlue);
+
+                float x = 180.0F;
+                float y = 250.0F;
+
+                g.DrawString(s2, drawFont, drawBrush, x, y);
+            }
+            else if (nr % 4 == 3)
+            {
+
+                Font drawFont = new Font("Arial", 16, FontStyle.Italic);
+                SolidBrush drawBrush = new SolidBrush(Color.CornflowerBlue);
+
+                float x = 200.0F;
+                float y = 300.0F;
+
+                g.DrawString(s3, drawFont, drawBrush, x, y);
+
+
+
+            }
         }
     }
 }

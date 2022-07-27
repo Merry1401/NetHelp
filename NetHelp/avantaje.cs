@@ -79,12 +79,5 @@ namespace NetHelp
             calculatorscreen f = new calculatorscreen();
             f.Show();
         }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-            slide f = new slide();
-            f.Show();
-            this.Hide();
-        }
     }
 }

@@ -19,7 +19,7 @@ namespace NetHelp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            app f = new app();
+            timerscreen f = new timerscreen();
             this.Close();
             f.Show();
         }

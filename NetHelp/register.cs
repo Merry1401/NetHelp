@@ -80,8 +80,6 @@ namespace NetHelp
             else
             {
                 textBox2.PasswordChar = '*';
-
-
             }
         }
     }

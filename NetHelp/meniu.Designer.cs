@@ -80,7 +80,7 @@ namespace NetHelp
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(183, 73);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Modalitati de a combata dezavantajele\r\nexcesul de screentime\r\n";
+            this.button3.Text = "Modalitati de a combata dezavantajele\r\nexcesului de screentime\r\n";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
@@ -134,6 +134,7 @@ namespace NetHelp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "meniu";
             this.Text = "Modalitati de a combate ";
+            this.Load += new System.EventHandler(this.meniu_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
