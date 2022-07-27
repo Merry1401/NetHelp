@@ -17,7 +17,7 @@ namespace NetHelp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new meniu());
+            Application.Run(new pagina_start());
         }
     }
 }
