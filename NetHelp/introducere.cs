@@ -23,9 +23,11 @@ namespace NetHelp
             meniu f = new meniu();
             f.Show();
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        private void label11_Click(object sender, EventArgs e)
         {
+            this.Close();
+            fiinta f = new fiinta();
+            f.Show();
 
         }
     }

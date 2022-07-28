@@ -30,7 +30,7 @@ namespace NetHelp
         private void button1_Click(object sender, EventArgs e)
         {
             c.Open();
-            string select = "select * from rank order by scor";
+            string select = "select * from rank order by cast(scor as int) DESC";
             SqlCommand cmd = new SqlCommand(select, c);
             SqlDataReader r = cmd.ExecuteReader();
             while (r.Read())

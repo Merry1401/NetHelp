@@ -139,7 +139,7 @@ namespace NetHelp
         private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
-            meniu f = new meniu();
+            meniu2 f = new meniu2();
             f.Show();
         }
 
@@ -154,6 +154,13 @@ namespace NetHelp
         {
             label9.Hide();
             label10.Hide();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            links f = new links();
+            f.Show();
         }
     }
 }

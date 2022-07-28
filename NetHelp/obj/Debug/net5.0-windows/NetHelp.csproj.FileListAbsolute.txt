@@ -39,3 +39,4 @@ C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.slide2.re
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.survey.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.links.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.timerscreen.resources
+C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.fiinta.resources

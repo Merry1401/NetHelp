@@ -34,6 +34,7 @@ namespace NetHelp
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,11 +81,25 @@ namespace NetHelp
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label11.Location = new System.Drawing.Point(809, 431);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 38);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "-->";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
             // introducere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 490);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -104,5 +119,6 @@ namespace NetHelp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label11;
     }
 }
