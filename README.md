@@ -1,4 +1,5 @@
-#NetHelp
+# NetHelp
+# About This Project
 Digital wellbeing este utilizarea constienta a tehnologiei care permite indivizilor si 
 comunitatilor sa-si realizeze potentialul. 
 Aceasta constituie impactul pe care il are tehnologia asupra sanatatii fizice, 
@@ -11,23 +12,15 @@ importante, cel mai intalnit efect negativ fiind utilizarea in mod excesiv a ret
 
 Ca solutie, am realizat acest proiect pentru a ajuta utilizatorul sa-si organizeze viata.
 
-Am impartit acest proiect in mai multe parti.
+# Technologies Used
+C#
+SQL Server
+
+# Content
 
 1. Logare si inregistrare
 Am folosit biblioteca Cryptography ca sa criptez parola pe care apoi am salvat-o intr-o baza de date. Pentru logare am criptat parola introdusa in textbox si am comparat-o cu cea din baza de date. Am folosit codul de aici: https://www.c-sharpcorner.com/article/encrypt-and-decrypt-user-password-in-sql-server-db-using-c-sharp-winform-application/ .
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.IO;
-using System.Security.Cryptography;
 
 namespace NetHelp
 {
@@ -75,17 +68,24 @@ namespace NetHelp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            c.Open();
-            string s1 = textBox2.Text;
-            var hash = Encrypt(s1);
-            string insert = @"insert into logare(username,password)values(@username,@password)";
-            SqlCommand cmd = new SqlCommand(insert, c);
-            cmd.Parameters.AddWithValue("username", textBox1.Text);
-            cmd.Parameters.AddWithValue("password", hash);
-            SqlDataReader r = cmd.ExecuteReader();
-            textBox2.Clear();
-            textBox1.Clear();
-            c.Close();
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                c.Open();
+                string s1 = textBox2.Text;
+                var hash = Encrypt(s1);
+                string insert = @"insert into logare(username,password)values(@username,@password)";
+                SqlCommand cmd = new SqlCommand(insert, c);
+                cmd.Parameters.AddWithValue("username", textBox1.Text);
+                cmd.Parameters.AddWithValue("password", hash);
+                SqlDataReader r = cmd.ExecuteReader();
+                textBox2.Clear();
+                textBox1.Clear();
+                c.Close();
+            }
+            else
+            {
+                MessageBox.Show("Te rog introduce toate datele.", "Register", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -146,6 +146,10 @@ namespace NetHelp
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Te rog introduce toate datele.", "Login", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
             c.Open();
             string s1 = textBox2.Text;
             var hash = Encrypt(s1);
@@ -467,7 +471,7 @@ public partial class slide2 : Form
 2.3.1 Timer pentru Screentime
  public partial class timerscreen : Form
     {
-        int time = 0;
+        int time = 15;
 
         public timerscreen()
         {
@@ -483,6 +487,8 @@ public partial class slide2 : Form
 
         private void button1_Click(object sender, EventArgs e)
         {
+            timer1.Interval = 1000;
+            label2.Text = time.ToString();
             timer1.Start();
             panel11.BackColor = Color.DarkTurquoise;
             panel10.BackColor = Color.OrangeRed;
@@ -490,6 +496,10 @@ public partial class slide2 : Form
             panel8.BackColor = Color.Red;
             panel7.BackColor = Color.Peru;
             panel6.BackColor = Color.Gold;
+            panel12.BackColor = Color.DarkTurquoise;
+            panel13.BackColor = Color.Chartreuse;
+            panel12.Show();
+            panel13.Show();
             panel11.Show();
             panel10.Show();
             panel9.Show();
@@ -501,10 +511,11 @@ public partial class slide2 : Form
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            time++;
-            if(time == 30)
+            time--;
+            if(time == 0)
             {
-                MessageBox.Show("Ai stat destul pe telefon astazi.");
+                panel12.Hide();
+                panel13.Hide();
                 panel11.Hide();
                 panel10.Hide();
                 panel9.Hide();
@@ -512,7 +523,9 @@ public partial class slide2 : Form
                 panel7.Hide();
                 panel6.Hide();
                 timer1.Stop();
+                MessageBox.Show("Ai stat destul pe telefon astazi.", "Timer Screentime", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
+            label2.Text = time.ToString();
         }
 
         private void panel11_Click(object sender, EventArgs e)
@@ -544,7 +557,24 @@ public partial class slide2 : Form
         {
             panel6.BackColor = Color.Crimson;
         }
-    }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBox1.Text, out time))
+            {
+                label2.Text = time.ToString();
+            }
+        }
+
+        private void panel12_Click(object sender, EventArgs e)
+        {
+            panel12.BackColor = Color.Crimson;
+        }
+
+        private void panel13_Click(object sender, EventArgs e)
+        {
+            panel13.BackColor = Color.Crimson;
+        }
 
 2.3.2 Dark Mode Schedule
 public partial class schedule : Form
@@ -833,6 +863,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Orange);
                         g.DrawString(s1, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
 
                     }
                     if (val > 7)
@@ -843,6 +874,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Red);
                         g.DrawString(s, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val < 5)
                     {
@@ -852,6 +884,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Green);
                         g.DrawString(s2, drawFont, b, x, y);
                         label9.Hide();
+                        label10.Hide();
                     }
                 }
                 if(val1 > 15 || val1 == 15)
@@ -864,6 +897,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Orange);
                         g.DrawString(s1, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val > 9)
                     {
@@ -873,6 +907,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Red);
                         g.DrawString(s, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val < 7)
                     {
@@ -882,6 +917,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Green);
                         g.DrawString(s2, drawFont, b, x, y);
                         label9.Hide();
+                        label10.Hide();
                     }
                 }
                 if (val1 <= 10)
@@ -894,6 +930,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Orange);
                         g.DrawString(s1, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val > 4)
                     {
@@ -903,6 +940,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Red);
                         g.DrawString(s, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val < 3)
                     {
@@ -912,6 +950,7 @@ public partial class calculatorscreen : Form
                         SolidBrush b = new SolidBrush(Color.Green);
                         g.DrawString(s2, drawFont, b, x, y);
                         label9.Hide();
+                        label10.Hide();
                     }
                 }
             }
@@ -930,6 +969,12 @@ public partial class calculatorscreen : Form
             this.Close();
             avantaje f = new avantaje();
             f.Show();
+        }
+
+        private void calculatorscreen_Load(object sender, EventArgs e)
+        {
+            label9.Hide();
+            label10.Hide();
         }
 
 2.4.1 Avantaje si Dezavantaje
@@ -998,4 +1043,40 @@ public partial class avantaje : Form
             label10.Hide();
         }
 
+2.4.2 Mai multe informatii
+Am folosit biblioteca Diagnostics.
+public partial class links : Form
+    {
+        public links()
+        {
+            InitializeComponent();
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+          
+            Process.Start(new ProcessStartInfo("https://wellbeing.google") { UseShellExecute = true });
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://www.techtarget.com/whatis/definition/digital-wellbeing") { UseShellExecute = true });
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://www.berkeleywellbeing.com/digital-well-being.html") { UseShellExecute = true });
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://www.psychologytoday.com/us/blog/click-here-happiness/202102/what-is-digital-well-being") { UseShellExecute = true });
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            calculatorscreen f = new calculatorscreen();
+            f.Show();
+        }
