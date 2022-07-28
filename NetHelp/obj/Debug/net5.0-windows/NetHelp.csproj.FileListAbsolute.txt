@@ -26,7 +26,6 @@ C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\ref\NetHelp.dll
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.pdb
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.genruntimeconfig.cache
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.meniu.resources
-C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.app.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.introducere.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.calculatorscreen.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.avantaje.resources
@@ -38,3 +37,5 @@ C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.leaderboa
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.slide.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.slide2.resources
 C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.survey.resources
+C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.links.resources
+C:\Users\Wind 10\source\repos\NetHelp\obj\Debug\net5.0-windows\NetHelp.timerscreen.resources

@@ -57,17 +57,24 @@ namespace NetHelp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            c.Open();
-            string s1 = textBox2.Text;
-            var hash = Encrypt(s1);
-            string insert = @"insert into logare(username,password)values(@username,@password)";
-            SqlCommand cmd = new SqlCommand(insert, c);
-            cmd.Parameters.AddWithValue("username", textBox1.Text);
-            cmd.Parameters.AddWithValue("password", hash);
-            SqlDataReader r = cmd.ExecuteReader();
-            textBox2.Clear();
-            textBox1.Clear();
-            c.Close();
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                c.Open();
+                string s1 = textBox2.Text;
+                var hash = Encrypt(s1);
+                string insert = @"insert into logare(username,password)values(@username,@password)";
+                SqlCommand cmd = new SqlCommand(insert, c);
+                cmd.Parameters.AddWithValue("username", textBox1.Text);
+                cmd.Parameters.AddWithValue("password", hash);
+                SqlDataReader r = cmd.ExecuteReader();
+                textBox2.Clear();
+                textBox1.Clear();
+                c.Close();
+            }
+            else
+            {
+                MessageBox.Show("Te rog introduce toate datele.", "Register", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace NetHelp
 {
     public partial class timerscreen : Form
     {
-        int time = 0;
+        int time = 15;
 
         public timerscreen()
         {
@@ -28,6 +28,8 @@ namespace NetHelp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            timer1.Interval = 1000;
+            label2.Text = time.ToString();
             timer1.Start();
             panel11.BackColor = Color.DarkTurquoise;
             panel10.BackColor = Color.OrangeRed;
@@ -35,6 +37,10 @@ namespace NetHelp
             panel8.BackColor = Color.Red;
             panel7.BackColor = Color.Peru;
             panel6.BackColor = Color.Gold;
+            panel12.BackColor = Color.DarkTurquoise;
+            panel13.BackColor = Color.Chartreuse;
+            panel12.Show();
+            panel13.Show();
             panel11.Show();
             panel10.Show();
             panel9.Show();
@@ -46,10 +52,11 @@ namespace NetHelp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            time++;
-            if(time == 30)
+            time--;
+            if(time == 0)
             {
-                MessageBox.Show("Ai stat destul pe telefon astazi.");
+                panel12.Hide();
+                panel13.Hide();
                 panel11.Hide();
                 panel10.Hide();
                 panel9.Hide();
@@ -57,7 +64,9 @@ namespace NetHelp
                 panel7.Hide();
                 panel6.Hide();
                 timer1.Stop();
+                MessageBox.Show("Ai stat destul pe telefon astazi.", "Timer Screentime", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
+            label2.Text = time.ToString();
         }
 
         private void panel11_Click(object sender, EventArgs e)
@@ -88,6 +97,24 @@ namespace NetHelp
         private void panel6_Click(object sender, EventArgs e)
         {
             panel6.BackColor = Color.Crimson;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBox1.Text, out time))
+            {
+                label2.Text = time.ToString();
+            }
+        }
+
+        private void panel12_Click(object sender, EventArgs e)
+        {
+            panel12.BackColor = Color.Crimson;
+        }
+
+        private void panel13_Click(object sender, EventArgs e)
+        {
+            panel13.BackColor = Color.Crimson;
         }
     }
 }

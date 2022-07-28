@@ -42,6 +42,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Orange);
                         g.DrawString(s1, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
 
                     }
                     if (val > 7)
@@ -52,6 +53,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Red);
                         g.DrawString(s, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val < 5)
                     {
@@ -61,6 +63,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Green);
                         g.DrawString(s2, drawFont, b, x, y);
                         label9.Hide();
+                        label10.Hide();
                     }
                 }
                 if(val1 > 15 || val1 == 15)
@@ -73,6 +76,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Orange);
                         g.DrawString(s1, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val > 9)
                     {
@@ -82,6 +86,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Red);
                         g.DrawString(s, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val < 7)
                     {
@@ -91,6 +96,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Green);
                         g.DrawString(s2, drawFont, b, x, y);
                         label9.Hide();
+                        label10.Hide();
                     }
                 }
                 if (val1 <= 10)
@@ -103,6 +109,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Orange);
                         g.DrawString(s1, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val > 4)
                     {
@@ -112,6 +119,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Red);
                         g.DrawString(s, drawFont, b, x, y);
                         label9.Show();
+                        label10.Show();
                     }
                     if (val < 3)
                     {
@@ -121,6 +129,7 @@ namespace NetHelp
                         SolidBrush b = new SolidBrush(Color.Green);
                         g.DrawString(s2, drawFont, b, x, y);
                         label9.Hide();
+                        label10.Hide();
                     }
                 }
             }
@@ -144,6 +153,7 @@ namespace NetHelp
         private void calculatorscreen_Load(object sender, EventArgs e)
         {
             label9.Hide();
+            label10.Hide();
         }
     }
 }

@@ -57,6 +57,10 @@ namespace NetHelp
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Te rog introduce toate datele.", "Login", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
             c.Open();
             string s1 = textBox2.Text;
             var hash = Encrypt(s1);

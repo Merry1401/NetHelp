@@ -43,6 +43,7 @@ namespace NetHelp
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,11 +186,24 @@ namespace NetHelp
             this.label9.Text = "Avantaje si Dezavantaje";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(494, 246);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(167, 23);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Mai multe informatii";
+            // 
             // calculatorscreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 524);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -229,5 +243,6 @@ namespace NetHelp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -77,9 +77,13 @@ namespace NetHelp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBox1.Text, out val) && int.TryParse(textBox2.Text, out val1))
+            if (int.TryParse(textBox1.Text, out val))
             {
-                scor = scor - val + val1;
+                scor = scor - val;
+            }
+            if(int.TryParse(textBox2.Text, out val1))
+            {
+                scor = scor + val1;
             }
             MessageBox.Show(scor.ToString());
             c.Open();
