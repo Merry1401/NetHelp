@@ -7,13 +7,13 @@ mentale si emotionale.
 
 Noi consideram ca tehnologia exista pentru a veni in sprijinul nostru.
 
-Totusi, uneori apare atat de des in viata noastra, incat ne poate distrage atentia de la lucrurile 
+Totusi, uneori apare atat de des in viata noastra, incat ne poate distrage atentia de la lucrurile/ 
 importante, cel mai intalnit efect negativ fiind utilizarea in mod excesiv a retelelor de socializare.
 
 Ca solutie, am realizat acest proiect pentru a ajuta utilizatorul sa-si organizeze viata.
 
 # Technologies Used
-C#
+C#/
 SQL Server
 
 # Content
